@@ -1,19 +1,21 @@
-package com.soupapp.soup.dtos;
+package com.soupapp.soup.dtos.user;
 
 
-import com.soupapp.soup.models.Customer;
+import com.soupapp.soup.models.User;
 
-public class CustomerRequestDto {
+public class UserRegisterDto {
     private String firstName;
     private String lastName;
     private String email;
+    private String password;
 
-    public Customer toCustomer (Customer customer){
-        customer.setFirstName(this.getFirstName());
-        customer.setLastName(this.getLastName());
-        customer.setEmail(this.getEmail());
+    public User toUser(User user){
+        user.setFirstName(this.getFirstName());
+        user.setLastName(this.getLastName());
+        user.setEmail(this.getEmail());
+        user.setPassword(this.getPassword());
 
-        return customer;
+        return user;
     }
 
     public String getFirstName() {
@@ -38,5 +40,13 @@ public class CustomerRequestDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

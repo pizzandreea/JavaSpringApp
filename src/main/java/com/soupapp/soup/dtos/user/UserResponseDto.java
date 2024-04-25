@@ -1,20 +1,21 @@
-package com.soupapp.soup.dtos;
+package com.soupapp.soup.dtos.user;
 
 
-import com.soupapp.soup.models.Customer;
+import com.soupapp.soup.models.User;
 
-public class CustomerResponseDto {
+public class UserResponseDto {
     private Integer Id;
     private String firstName;
     private String lastName;
     private String email;
 
-    public CustomerResponseDto fromCostumer(Customer customer){
-        setId(customer.getId());
-        setEmail(customer.getEmail());
-        setFirstName(customer.getFirstName());
-        setLastName(customer.getLastName());
-
+    public UserResponseDto fromUser(User user){
+        if (user != null) {
+            setId(user.getId());
+            setEmail(user.getEmail());
+            setFirstName(user.getFirstName());
+            setLastName(user.getLastName());
+        }
         return this;
     }
 
